@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
+import PatientForm from "@/components/form/PatientForm";
 export default function Home() {
   return (
     <div className="flex h-screen max-h-screen">
       <section className="remove-scrollbar container my-auto">
           <div className="sub-container max-w-[496px]"> 
-            hi
             <Image 
             src="/assets/icons/logo-full.svg"
             alt="CarePluse"
@@ -13,8 +13,20 @@ export default function Home() {
             height={1000}
             className="mb-12 h-10 w-fit"
             />
+            <PatientForm/>
+            <div className="text-14-regular mt-20 flex justify-between">
+            <p className="text-dark-600 justify-items-end xl-text-left">&#169; 2024 CarePluse</p>
+            <Link href="/?admin=true" className="text-green-500">Admin</Link>
+            </div>
           </div>
       </section>
+      <Image 
+      src="/assets/images/onboarding-img.png"
+        height={1000}
+        width={1000}
+        alt="patient"
+        className=" side-img max-w[40%]"
+      />
     </div>
   );
 }
